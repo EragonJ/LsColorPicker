@@ -1,0 +1,18 @@
+Introduction
+============
+
+It's a small tool that can help you choose your own ls color. Because I designed this on Mac OS X 10.5, I'm not sure whether you can use it on other OS or not! But I'm glad to receive your feedback if you can help me on them.
+
+Installation
+============
+
+Because I use Term::ANSIColor module here to help me show the colors to users, you have to install this module through CPANPLUS or CPAN. This is its page on CPAN - [Click Me](http://search.cpan.org/~rra/ANSIColor-3.00/ANSIColor.pm)
+
+USAGE
+=====
+	
+	perl picker.pl (then follow the steps)
+
+Snap
+====
+
