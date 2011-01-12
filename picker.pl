@@ -1,4 +1,5 @@
 #!usr/bin/perl -w
+use strict;
 
 # Use the package
 use Term::ANSIColor;
@@ -66,44 +67,41 @@ fileIO($setting);
 
 sub assign
 {
-	my($l,$r) = @_;
+	my ($l,$r) = @_;
 	my $fg;
 	my $bg;
 
 	# Default value white foreground with black background
 	$l = "07" if ($l gt "15");
 	$r = "0"  if ($r gt "7");
-
-	$left  = int($l);
-	$right = int($r); 
 	
 	# For foreground color
-	$fg = 'a' if $left == 0; 
-	$fg = 'b' if $left == 1; 
-	$fg = 'c' if $left == 2; 
-	$fg = 'd' if $left == 3; 
-	$fg = 'e' if $left == 4; 
-	$fg = 'f' if $left == 5; 
-	$fg = 'g' if $left == 6; 
-	$fg = 'h' if $left == 7; 
-	$fg = 'A' if $left == 8; 
-	$fg = 'B' if $left == 9; 
-	$fg = 'C' if $left == 10; 
-	$fg = 'D' if $left == 11; 
-	$fg = 'E' if $left == 12; 
-	$fg = 'F' if $left == 13; 
-	$fg = 'G' if $left == 14; 
-	$fg = 'H' if $left == 15; 
+	$fg = "a" if $l cmp "0"; 
+	$fg = "b" if $l cmp "1"; 
+	$fg = "c" if $l cmp "2"; 
+	$fg = "d" if $l cmp "3"; 
+	$fg = "e" if $l cmp "4"; 
+	$fg = "f" if $l cmp "5"; 
+	$fg = "g" if $l cmp "6"; 
+	$fg = "h" if $l cmp "7"; 
+	$fg = "A" if $l cmp "8"; 
+	$fg = "B" if $l cmp "9"; 
+	$fg = "C" if $l cmp "10"; 
+	$fg = "D" if $l cmp "11"; 
+	$fg = "E" if $l cmp "12"; 
+	$fg = "F" if $l cmp "13"; 
+	$fg = "G" if $l cmp "14"; 
+	$fg = "H" if $l cmp "15"; 
 	
 	#for background color
-	$bg = 'a' if $right == 0; 
-	$bg = 'b' if $right == 1; 
-	$bg = 'c' if $right == 2; 
-	$bg = 'd' if $right == 3; 
-	$bg = 'e' if $right == 4; 
-	$bg = 'f' if $right == 5; 
-	$bg = 'g' if $right == 6; 
-	$bg = 'h' if $right == 7; 
+	$bg = "a" if $r cmp "0"; 
+	$bg = "b" if $r cmp "1"; 
+	$bg = "c" if $r cmp "2"; 
+	$bg = "d" if $r cmp "3"; 
+	$bg = "e" if $r cmp "4"; 
+	$bg = "f" if $r cmp "5"; 
+	$bg = "g" if $r cmp "6"; 
+	$bg = "h" if $r cmp "7"; 
 
 	$setting .= $fg.$bg;
 }
