@@ -1,6 +1,8 @@
 #!usr/bin/perl -w
 use strict;
 
+# dxfxgacabxfxhxhxhxhxhx
+
 # Use the package
 use Term::ANSIColor;
 use Term::ANSIColor qw(:constants);
@@ -19,6 +21,8 @@ my @background = qw{ON_BLACK ON_RED ON_GREEN ON_YELLOW ON_BLUE ON_MAGENTA ON_CYA
 my $setting = '';
 
 my $result;
+
+osCheck();
 
 foreach my $option (@options)
 {
@@ -51,8 +55,8 @@ foreach my $option (@options)
 		print "Plz type the number shown on the top.\n>> ";
 
 		# Get the result from the user
-		$result = <>;
-		chomp($result);
+		chomp($result = <>);
+
 		system("clear");
 		print "Your choise is not correct! plz try again\n" if(length($result)!=3);
 
@@ -63,7 +67,7 @@ foreach my $option (@options)
 }
 
 print "Plz restart your bash to see the result\n";
-fileIO($setting);
+store($setting);
 
 sub assign
 {
@@ -72,8 +76,8 @@ sub assign
 	my $bg;
 
 	# Default value white foreground with black background
-	$l = "07" if ($l gt "15");
-	$r = "0"  if ($r gt "7");
+	$l = "07" if $l gt "15";
+	$r = "0"  if $r gt "7";
 	
 	# For foreground color
 	$fg = "a" if $l cmp "0"; 
@@ -106,25 +110,34 @@ sub assign
 	$setting .= $fg.$bg;
 }
 
-sub fileIO
+sub store
 {
   my ($set) = @_;
   my $path  = $ENV{HOME}."/.profile";
-	my $check = 0;
   my $all;
 
-  open IN, "<", $path;
-  
-  while($_ = <IN>)
+  # If it exists
+  if(-e $path)
   {
-    $check = 1 if s/export LSCOLORS=".*"/export LSCOLORS="$set"/;
-    $all .= $_; 
+    open IN, "<", $path;
+    while(<IN>)
+    {
+      s/export LSCOLORS=".*"/export LSCOLORS="$set"/;
+      $all .= $_; 
+    }
+    close IN; 
   }
-	
-	$all .= 'export LSCOLORS="$set"' if $check==0;
+  else
+  {
+    $all .= "export LSCOLORS=\"$set\"";
+  }
+
   open OUT, ">", $path;
   print OUT $all;
-  
-  close IN; 
   close OUT;
+}
+
+sub osCheck
+{
+  die("Support Mac OS X only!") if $^O ne "darwin";
 }
