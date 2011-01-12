@@ -80,32 +80,32 @@ sub assign
 	$r = "0"  if $r gt "7";
 	
 	# For foreground color
-	$fg = "a" if $l cmp "0"; 
-	$fg = "b" if $l cmp "1"; 
-	$fg = "c" if $l cmp "2"; 
-	$fg = "d" if $l cmp "3"; 
-	$fg = "e" if $l cmp "4"; 
-	$fg = "f" if $l cmp "5"; 
-	$fg = "g" if $l cmp "6"; 
-	$fg = "h" if $l cmp "7"; 
-	$fg = "A" if $l cmp "8"; 
-	$fg = "B" if $l cmp "9"; 
-	$fg = "C" if $l cmp "10"; 
-	$fg = "D" if $l cmp "11"; 
-	$fg = "E" if $l cmp "12"; 
-	$fg = "F" if $l cmp "13"; 
-	$fg = "G" if $l cmp "14"; 
-	$fg = "H" if $l cmp "15"; 
+	$fg = "a" if $l eq "0"; 
+	$fg = "b" if $l eq "1"; 
+	$fg = "c" if $l eq "2"; 
+	$fg = "d" if $l eq "3"; 
+	$fg = "e" if $l eq "4"; 
+	$fg = "f" if $l eq "5"; 
+	$fg = "g" if $l eq "6"; 
+	$fg = "h" if $l eq "7"; 
+	$fg = "A" if $l eq "8"; 
+	$fg = "B" if $l eq "9"; 
+	$fg = "C" if $l eq "10"; 
+	$fg = "D" if $l eq "11"; 
+	$fg = "E" if $l eq "12"; 
+	$fg = "F" if $l eq "13"; 
+	$fg = "G" if $l eq "14"; 
+	$fg = "H" if $l eq "15"; 
 	
 	#for background color
-	$bg = "a" if $r cmp "0"; 
-	$bg = "b" if $r cmp "1"; 
-	$bg = "c" if $r cmp "2"; 
-	$bg = "d" if $r cmp "3"; 
-	$bg = "e" if $r cmp "4"; 
-	$bg = "f" if $r cmp "5"; 
-	$bg = "g" if $r cmp "6"; 
-	$bg = "h" if $r cmp "7"; 
+	$bg = "a" if $r eq "0"; 
+	$bg = "b" if $r eq "1"; 
+	$bg = "c" if $r eq "2"; 
+	$bg = "d" if $r eq "3"; 
+	$bg = "e" if $r eq "4"; 
+	$bg = "f" if $r eq "5"; 
+	$bg = "g" if $r eq "6"; 
+	$bg = "h" if $r eq "7"; 
 
 	$setting .= $fg.$bg;
 }
