@@ -80,16 +80,16 @@ sub assign
 	$r = "0"  if $r gt "7";
 	
 	# For foreground color
-	$fg = "a" if $l eq "0"; 
-	$fg = "b" if $l eq "1"; 
-	$fg = "c" if $l eq "2"; 
-	$fg = "d" if $l eq "3"; 
-	$fg = "e" if $l eq "4"; 
-	$fg = "f" if $l eq "5"; 
-	$fg = "g" if $l eq "6"; 
-	$fg = "h" if $l eq "7"; 
-	$fg = "A" if $l eq "8"; 
-	$fg = "B" if $l eq "9"; 
+	$fg = "a" if $l eq "00"; 
+	$fg = "b" if $l eq "01"; 
+	$fg = "c" if $l eq "02"; 
+	$fg = "d" if $l eq "03"; 
+	$fg = "e" if $l eq "04"; 
+	$fg = "f" if $l eq "05"; 
+	$fg = "g" if $l eq "06"; 
+	$fg = "h" if $l eq "07"; 
+	$fg = "A" if $l eq "08"; 
+	$fg = "B" if $l eq "09"; 
 	$fg = "C" if $l eq "10"; 
 	$fg = "D" if $l eq "11"; 
 	$fg = "E" if $l eq "12"; 
